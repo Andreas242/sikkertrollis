@@ -1,0 +1,62 @@
+.step-icon.completed {
+    color: green; /* Choose the color you prefer for completed steps */
+}
+
+.step-icon.active {
+    color: blueviolet;
+}
+
+.step-icon {
+    
+    cursor: pointer;
+    
+}
+
+.stepsContainer {
+    align-items: center;
+    display: flex;
+    background-color: cadetblue;
+    justify-content: space-evenly;
+    min-height: 20vh;
+}
+
+.stepContent {
+    background-color: #f2f2f2;
+    min-height: 50vh;
+    padding: 2rem;
+}
+
+.step-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  
+  .step-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .step-exit {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .step-exit-active {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+
+  .responseContent {
+    padding: 1rem;
+  }
+  
+  .stepOptions {
+    padding-left: 1rem;
+  }
+
+  .responseOption {
+    margin-bottom: 1rem;
+  }
