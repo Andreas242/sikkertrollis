@@ -13,11 +13,9 @@
 }
 
 .stepsContainer {
-    align-items: center;
-    display: flex;
     background-color: rgb(247, 141, 14);
     justify-content: space-evenly;
-    min-height: 20vh;
+    min-height: 14vh;
 }
 
 .stepContent {
@@ -27,6 +25,9 @@
     position: relative;
     background-color: #1e4e68;
     color: #FFF;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     
 }
 
@@ -50,6 +51,9 @@
   position: relative ;
   width: 1000px;
   min-height: 40vh;
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .step-enter {
@@ -138,17 +142,17 @@
   border-style: none;
   box-shadow: rgba(0, 0, 0, .2) 0 3px 1px -2px,rgba(0, 0, 0, .14) 0 2px 2px 0,rgba(0, 0, 0, .12) 0 1px 5px 0;
   box-sizing: border-box;
-  color: #fff;
+  color: #1b1b1b;
   cursor: pointer;
   display: inline-flex;
   font-family: Roboto,sans-serif;
   font-size: .875rem;
-  font-weight: 500;
-  height: 36px;
+  font-weight: 600;
+  height: 64px;
   justify-content: center;
   letter-spacing: .0892857em;
   line-height: normal;
-  min-width: 64px;
+  min-width: 148px;
   outline: none;
   overflow: visible;
   padding: 0 16px;
@@ -177,7 +181,7 @@
 }
 
 .button61:not(:disabled) {
-  background-color: #6200ee;
+  background-color: rgb(247, 141, 14);;
 }
 
 .button61:focus {
@@ -186,7 +190,7 @@
 
 .button61:active {
   box-shadow: rgba(0, 0, 0, .2) 0 5px 5px -3px, rgba(0, 0, 0, .14) 0 8px 10px 1px, rgba(0, 0, 0, .12) 0 3px 14px 2px;
-  background: #A46BF5;
+  background: #fc8f36;
 }
 
 .recommendation {
@@ -198,11 +202,19 @@
     flex-direction: column;
     border: 2px solid black;
     padding: 1rem;
+    background-color: rgb(247, 141, 14);
+    color: #000;
+}
+
+.emptyrecommendation {
+  min-width: 20%;
+  max-width: 30%;
+  content: "";
 }
 
 .responseContainer {
     display: flex;
-    justify-content: space-between;
+    margin-top: 2rem;
 }
 
 

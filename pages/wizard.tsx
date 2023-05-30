@@ -2,7 +2,7 @@
 import { ReactElement, useState } from "react";
 import Step1 from "./steps/Step1";
 import FinalStep from "./steps/FinalStep";
-import { FaJsfiddle, FaJediOrder, FaHive, FaAddressBook } from "react-icons/fa";
+import { FaUserSecret, FaShieldVirus, FaLock, FaCamera } from "react-icons/fa";
 import styles from '../styles/Icons.module.css';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import STEPMOCK from "@/MOCKDATA/STEPMOCK";
@@ -12,10 +12,10 @@ function Wizard() {
     const [completedSteps, setCompletedSteps] = useState([]);
     const [oldStates, setOldStates] = useState([0, 0, 0, 0]); // set this to remeber what the user has chosen on every step
     const stepIcons: Record<number, ReactElement> = {
-        1: <FaJsfiddle size={32} />,
-        2: <FaJediOrder size={32} />,
-        3: <FaHive size={32} />,
-        4: <FaAddressBook size={32} />,
+        1: <FaUserSecret size={32} />,
+        2: <FaShieldVirus size={32} />,
+        3: <FaLock size={32} />,
+        4: <FaCamera size={32} />,
     };
 
 
@@ -86,9 +86,10 @@ function Wizard() {
                 <button className={styles.button61} role="button" disabled={!isStepCompleted(step)}
                     onClick={handleStepCompletion}>Neste</button>
             </div>
-            <div>
+ {/**           <div>
                 {completedSteps},{step}, {isStepCompleted(step).toString()}
             </div>
+*/}
         </div>
         <footer className={styles.footer}>
     <div className={styles.footerContainer}>
@@ -97,7 +98,7 @@ function Wizard() {
             <div className={styles.footerContent}>
       
         <div className={styles.footerLogoContainer}>
-            <img src="path-to-your-logo.png" alt="Logo"/>
+            <img src="nsm.png" alt="NSM" width="100px"/>
         </div>                   
 
 

@@ -54,6 +54,7 @@ const Step1: React.FC<Step1Props> = ({
           </div>
         ))}
       </div>
+      {!selectedOption && <div className={styles.emptyrecommendation}></div>}
       {selectedOption && <div className={styles.recommendation}>
         <div>her står det hvor bra du ligger an motsvarende siffren under</div>
         
