@@ -41,6 +41,14 @@ function Wizard() {
     };
 
     return (
+        <div>
+            <div className={styles.hero}>
+                <h1>
+                    <span className={styles.title1}>F O R S V A R</span>
+                    </h1>
+                    </div>
+
+
         <div className="steps">
             <div className={styles.stepsContainer}>
                 {Object.keys(stepIcons).map((key) => {
@@ -60,6 +68,7 @@ function Wizard() {
                 })}
             </div>
             <div className={styles.stepContent}>
+                <div className={styles.stepContentInner}>
                 <TransitionGroup component={null}>
                     <CSSTransition
                         key={step}
@@ -69,16 +78,39 @@ function Wizard() {
                             exit: styles["step-exit"],
                             exitActive: styles["step-exit-active"],
                         }}
-                        timeout={300}>
+                        timeout={500}>
                         {steps[0].component}
                     </CSSTransition>
                 </TransitionGroup>
+                </div>
                 <button className={styles.button61} role="button" disabled={!isStepCompleted(step)}
                     onClick={handleStepCompletion}>Neste</button>
             </div>
             <div>
                 {completedSteps},{step}, {isStepCompleted(step).toString()}
             </div>
+        </div>
+        <footer className={styles.footer}>
+    <div className={styles.footerContainer}>
+        
+            <p className={styles.footerLeadText}>This is some leading text for the footer. It should provide some brief information about the site or company.</p>
+            <div className={styles.footerContent}>
+      
+        <div className={styles.footerLogoContainer}>
+            <img src="path-to-your-logo.png" alt="Logo"/>
+        </div>                   
+
+
+        <div className={styles.footerLinks}>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            <a href="#">Link 4</a>
+        </div>
+        </div>
+
+    </div>
+</footer>
         </div>
     );
 }

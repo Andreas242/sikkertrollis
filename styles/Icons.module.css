@@ -15,7 +15,7 @@
 .stepsContainer {
     align-items: center;
     display: flex;
-    background-color: rgb(213, 213, 213);
+    background-color: rgb(247, 141, 14);
     justify-content: space-evenly;
     min-height: 20vh;
 }
@@ -24,28 +24,60 @@
     background-color: #f2f2f2;
     min-height: 50vh;
     padding: 2rem;
+    position: relative;
+    background-color: #1e4e68;
+    color: #FFF;
+    
+}
+
+.hero {
+  padding: 3rem;
+  margin: auto;
+  width: 100%;
+  align-items: center;
+  background-color: #0a4463;
+  color:rgb(255, 255, 255);
+  text-align: center;
+}
+
+
+.title1 {
+ display: flex;
+
+}
+
+.stepContentInner {
+  position: relative ;
+  width: 1000px;
+  min-height: 40vh;
 }
 
 .step-enter {
     opacity: 0;
+    position: absolute;
     transform: translateX(-100%);
+    z-index: 2;
   }
   
   .step-enter-active {
     opacity: 1;
     transform: translateX(0);
-    transition: opacity 300ms, transform 300ms;
+    transition: opacity 500ms, transform 500ms;
+    
   }
   
   .step-exit {
     opacity: 1;
+    position: absolute;
     transform: translateX(0);
+    z-index: 0;
   }
   
   .step-exit-active {
     opacity: 0;
+    
     transform: translateX(100%);
-    transition: opacity 300ms, transform 300ms;
+    transition: opacity 500ms, transform 500ms;
   }
   
 
@@ -61,6 +93,42 @@
     margin-bottom: 1rem;
   }
 
+  .footer {
+    background-color: #e0deda;
+    display: flex;
+    justify-content: center;
+  }
+
+  .footerContainer  {
+    padding-top: 12px;
+    padding-left: 8px;
+  }
+
+  .footerLeadText {
+    max-width: 80ch;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .footerContent {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .footerLogoContainer {
+        display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    margin-bottom: 24px
+  }
+
+  .footerLinks {
+    display: flex;
+    gap: 24px;
+  }
 
 /* CSS */
 .button61 {
@@ -153,7 +221,7 @@
   left: 25px; /* Match the step-icon width */
   width: calc(100% - 50px); /* Adjust the line width to only span between the first and last icon */
   height: 4px;
-  background-color: black;
+  background-color: rgb(2, 50, 104);
   z-index: 0; /* Change the z-index value to 0 so the line is visible */
 
 }
@@ -164,25 +232,30 @@
   justify-content: center;
   width: 50px;
   height: 50px;
-  background-color: lightblue;
+  background-color: #0a4463;
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   z-index: 1; /* Add z-index value to ensure icons are above the black line */
   position: relative; /* Add position relative to make z-index work */
+  color: #fff;
 
 }
 
 .step-icon.active {
   background-color: orange;
+  color: #000;
+  border: 1px solid bl;
 }
 
 .step-icon.completed {
   background-color: darkblue;
+  color: #f59c17;
 }
 
 .step-icon:hover {
   background-color: orange;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transform: scale(1.1);
+  color: #000;
 }
