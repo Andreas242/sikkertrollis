@@ -32,6 +32,30 @@
 }
 
 .hero {
+  background-image: url('/cubes.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%; /* adjust as necessary */
+  height: 160px; /* adjust as necessary */
+  padding: 3rem;
+  width: 100%;
+  align-items: center;
+  color:rgb(255, 255, 255);
+  text-align: center;
+}
+
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, rgba(10, 68, 99, 1) 10%, rgba(10, 68, 99, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+}
+.heroOld {
   padding: 3rem;
   margin: auto;
   width: 100%;
@@ -44,6 +68,8 @@
 
 .title1 {
  display: flex;
+ z-index: 100;
+ position: absolute;
 
 }
 
