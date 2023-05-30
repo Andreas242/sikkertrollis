@@ -16,6 +16,8 @@
     background-color: rgb(247, 141, 14);
     justify-content: space-evenly;
     min-height: 14vh;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
 }
 
 .stepContent {
@@ -23,7 +25,7 @@
     min-height: 50vh;
     padding: 2rem;
     position: relative;
-    background-color: #1e4e68;
+    background-color: #145568;
     color: #FFF;
     display: flex;
     justify-content: center;
