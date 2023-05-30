@@ -44,7 +44,7 @@ function Wizard() {
         <div>
             <div className={styles.hero}>
                 <h1>
-                    <span className={styles.title1}>F O R S V A R</span>
+                    <span className={styles.title1}>F O R Sikker Virksomhet Automatisert Respons</span>
                     </h1>
                     </div>
 
