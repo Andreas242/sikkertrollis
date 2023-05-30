@@ -94,7 +94,7 @@ function Wizard() {
         <footer className={styles.footer}>
     <div className={styles.footerContainer}>
         
-            <p className={styles.footerLeadText}>This is some leading text for the footer. It should provide some brief information about the site or company.</p>
+            <p className={styles.footerLeadText}>Denne siden er laget for å hjelpe norske bedrifter med å være oppmerksomme på trusler og hvordan man best kan tilpasse sin sikkerhetsstrategi for å motvirke dem.</p>
             <div className={styles.footerContent}>
       
         <div className={styles.footerLogoContainer}>
