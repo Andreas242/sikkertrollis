@@ -20,20 +20,20 @@ const STEPMOCK = [{
     HEADING: 'Hva har selskapet gjort for å beskytte sensitive data?',
     RESPONSES: [
     { id: 1, label: 'Vi har ikke implementert noen sikkerhetstiltak for å beskytte sensitive data.', lvl: 1, feedback: 'Ikke bra' },
-    { id: 2, label: 'Vi krypter data ved hjelp av standard krypteringsalgoritmer.', lvl: 2, feedback: '' },
-    { id: 3, label: 'Vi har implementert tilleggsbeskyttelse ved å kreve tofaktorautentisering for å få tilgang til sensitive data.', lvl: 2, feedback: '' },
-    { id: 4, label: 'Sensitive data lagres på en sikker skytjeneste.', lvl: 2, feedback: '' },
-    { id: 5, label: 'Vi har en kombinasjon av flere av ovennevnte tiltak.', lvl: 3, feedback: '' },
+    { id: 2, label: 'Vi krypter data ved hjelp av standard krypteringsalgoritmer.', lvl: 2, feedback: 'Gjør bedre' },
+    { id: 3, label: 'Vi har implementert tilleggsbeskyttelse ved å kreve tofaktorautentisering for å få tilgang til sensitive data.', lvl: 2, feedback: 'Gjør bedre' },
+    { id: 4, label: 'Sensitive data lagres på en sikker skytjeneste.', lvl: 2, feedback: 'Ganska bra' },
+    { id: 5, label: 'Vi har en kombinasjon av flere av ovennevnte tiltak.', lvl: 3, feedback: 'Vädligt bra' },
 ]
 
 },
 {
     HEADING: 'Hva har selskapet gjort for å beskytte mot trusler fra internett of ting?',
     RESPONSES: [{ id: 1, label: 'Vi er ikke klar over trusler fra IoT.', lvl: 1, feedback: 'Ikke bra' },
-    { id: 1, label: 'Vi overvåker regelmessig for sårbare enheter på nettverket.', lvl: 2, feedback: '' },
-    { id: 1, label: 'Vi har implementert teknologi for å oppdage trusler fra IoT i sanntid.', lvl: 2, feedback: '' },
-    { id: 1, label: 'Vi oppdaterer regelmessig sårbare enheter for å sikre deres sikkerhet.', lvl: 2, feedback: '' },
-    { id: 1, label: 'Vi har en kombinasjon av flere av ovennevnte tiltak.', lvl: 3, feedback: '' }]
+    { id: 2, label: 'Vi overvåker regelmessig for sårbare enheter på nettverket.', lvl: 2, feedback: '' },
+    { id: 3, label: 'Vi har implementert teknologi for å oppdage trusler fra IoT i sanntid.', lvl: 2, feedback: '' },
+    { id: 4, label: 'Vi oppdaterer regelmessig sårbare enheter for å sikre deres sikkerhet.', lvl: 2, feedback: '' },
+    { id: 5, label: 'Vi har en kombinasjon av flere av ovennevnte tiltak.', lvl: 3, feedback: '' }]
 
 },
 

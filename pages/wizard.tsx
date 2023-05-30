@@ -1,8 +1,6 @@
 // components/Wizard.tsx
 import { ReactElement, useState } from "react";
 import Step1 from "./steps/Step1";
-import Step2 from "./steps/Step2";
-import Step3 from "./steps/Step3";
 import FinalStep from "./steps/FinalStep";
 import { FaJsfiddle, FaJediOrder, FaHive, FaAddressBook } from "react-icons/fa";
 import styles from '../styles/Icons.module.css';
@@ -13,12 +11,12 @@ function Wizard() {
     const [step, setStep] = useState(1);
     const [completedSteps, setCompletedSteps] = useState([]);
     const [oldStates, setOldStates] = useState([0, 0, 0, 0]); // set this to remeber what the user has chosen on every step
-   const stepIcons: Record<number, ReactElement> = {
-  1: <FaJsfiddle size={32} />,
-  2: <FaJediOrder size={32} />,
-  3: <FaHive size={32} />,
-  4: <FaAddressBook size={32} />,
-};
+    const stepIcons: Record<number, ReactElement> = {
+        1: <FaJsfiddle size={32} />,
+        2: <FaJediOrder size={32} />,
+        3: <FaHive size={32} />,
+        4: <FaAddressBook size={32} />,
+    };
 
 
     const steps = [
@@ -26,8 +24,8 @@ function Wizard() {
             title: `Step ${step}`,
             component: <Step1 setCompletedSteps={setCompletedSteps}
                 completedSteps={completedSteps}
-                content={STEPMOCK[step-1]}
-                step={step} />,               
+                content={STEPMOCK[step - 1]}
+                step={step} />,
         },
         {
             title: "Final Step",
@@ -50,7 +48,6 @@ function Wizard() {
                     const isActive = numKey === step;
                     const isCompleted = completedSteps.includes(numKey);
                     return (
-
                         <div
                             key={numKey}
                             className={`${styles['step-icon']} ${isActive ? styles.active : ""} ${isCompleted ? styles.completed : ""
@@ -59,7 +56,6 @@ function Wizard() {
                         >
                             {stepIcons[numKey]}
                         </div>
-
                     );
                 })}
             </div>
@@ -74,18 +70,11 @@ function Wizard() {
                             exitActive: styles["step-exit-active"],
                         }}
                         timeout={300}>
-                       {/** {steps[step - 1].component}  */}
-                       {steps[0].component}
+                        {steps[0].component}
                     </CSSTransition>
                 </TransitionGroup>
-                {step < steps.length && (
-                    <button
-                        disabled={!isStepCompleted(step.toString())}
-                        onClick={handleStepCompletion}
-                    >
-                        Next
-                    </button>
-                )}
+                <button className={styles.button61} role="button" disabled={!isStepCompleted(step)}
+                    onClick={handleStepCompletion}>Neste</button>
             </div>
             <div>
                 {completedSteps},{step}, {isStepCompleted(step).toString()}
