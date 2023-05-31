@@ -36,11 +36,14 @@ const Step1: React.FC<Step1Props> = ({
   };
 
   return (
+    <div>
+      {content && 
+    
     <div key={step}>
       <h2>{content.HEADING}</h2>
       <div className={styles.responseContainer}>
       <div className={styles.responseContent}>
-        {options?.map((option) => (
+        {options.map((option) => (
           <div key={option.id} className={styles.responseOption}>
             <input
               type="radio"
@@ -63,6 +66,8 @@ const Step1: React.FC<Step1Props> = ({
 }
       </div>
         
+    </div>
+}
     </div>
   );
 };
