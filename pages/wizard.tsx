@@ -7,13 +7,12 @@ import styles from '../styles/Icons.module.css';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import STEPMOCK from "@/MOCKDATA/STEPMOCK";
 
-function Wizard() {
+const Wizard = (props:any) => {
     const totalSteps = STEPMOCK.length;
     const [step, setStep] = useState(1);
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [completedSteps, setCompletedSteps] = useState<number[]>([]);
-    const [oldStates, setOldStates] = useState([0, 0, 0, 0]); // set this to remeber what the user has chosen on every step
-    const stepIcons: Record<number, { icon: ReactElement, title: string }> = {
+       const stepIcons: Record<number, { icon: ReactElement, title: string }> = {
         1: { icon: <FaUserSecret size={32} />, title: 'Kvantedatamaskiner' },
         2: { icon: <FaShieldVirus size={32} />, title: 'Phising' },
         3: { icon: <FaLock size={32} />, title: 'Dataskydd' },
@@ -43,6 +42,8 @@ function Wizard() {
             setIsDialogOpen(true);
             setStep(1);
         } else {
+      //      const currentScore = props.score;
+       //     props.setScore(currentScore + STEPMOCK[step-1].)
             // Otherwise, proceed to the next step
             setStep(step + 1);
         }
@@ -54,14 +55,11 @@ function Wizard() {
 
     return (
         <div>
-
             <div className={styles.hero}>
                 <h1>
                     <span className={styles.title1}>F O R Sikker Virksomhet Automatisert Respons</span>
                 </h1>
             </div>
-
-
             <div className="steps">
                 {isDialogOpen && (
                     <div className={styles.backdrop}></div>
@@ -69,11 +67,12 @@ function Wizard() {
                 {isDialogOpen && (
                     <dialog open>
                         <h2>Gratulerer</h2>
-                        <p>Du har tatt deg igjennom sikkerhetskollen og har fått: X poeng.
+                        <p>Du har tatt deg igjennom sikkerhetskollen og har fått: 10 poeng.
                         </p>
-                        <p>Ditt beste område er: </p>
-                        <p>Ditt område med mest forbedringspotensiale er: </p>
-                        <button onClick={closeDialog}>Close</button>
+                        <p>Ditt beste område er: <span className={styles.areasofinterest}>IOT</span></p>
+                        <p>Ditt område med mest forbedringspotensiale er: <span className={styles.areasofinterest}>Kvantedatamaskiner</span></p>
+                        <p>Du kan lese mer om hur du kan forberede din bedrift for kvanteapokalypsen <a href="https://imdb.com/title/tt1265621/"> -her-</a></p>
+                        <button className={styles.button62} onClick={closeDialog}>Lukk</button>
                     </dialog>
                 )}
                 <div className={styles.stepsContainer}>

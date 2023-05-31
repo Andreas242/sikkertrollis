@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <div className={'wrapper'}>
-        <Wizard score={score} setScore={setScore} oldStates={oldStates} setOldStates={setOldStates}/>
+        <Wizard/>
       </div>
     </>
   )
