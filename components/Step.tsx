@@ -1,4 +1,4 @@
-import StepForm from './StepForm';
+
 import Feedback from './Feedback';
 
 const Step = ({ step, onNext }) => {
@@ -9,7 +9,7 @@ const Step = ({ step, onNext }) => {
 
   return (
     <div>
-      <StepForm onSubmit={handleSubmit} />
+
       <Feedback input={/* Pass the user input */} />
     </div>
   );
