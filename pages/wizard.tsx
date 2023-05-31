@@ -8,7 +8,9 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import STEPMOCK from "@/MOCKDATA/STEPMOCK";
 
 function Wizard() {
+    const totalSteps = STEPMOCK.length;
     const [step, setStep] = useState(1);
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [completedSteps, setCompletedSteps] = useState<number[]>([]);
     const [oldStates, setOldStates] = useState([0, 0, 0, 0]); // set this to remeber what the user has chosen on every step
     const stepIcons: Record<number, ReactElement> = {
@@ -36,12 +38,22 @@ function Wizard() {
 
 
     const handleStepCompletion = () => {
-        // setCompletedSteps([...completedSteps, step]);
-        setStep(step + 1);
+        if (step === totalSteps) {
+            // Open the dialog when it's the last step
+            setIsDialogOpen(true);
+        } else {
+            // Otherwise, proceed to the next step
+            setStep(step + 1);
+        }
+    };
+
+    const closeDialog = () => {
+        setIsDialogOpen(false);
     };
 
     return (
         <div>
+                      
             <div className={styles.hero}>
                 <h1>
                     <span className={styles.title1}>F O R Sikker Virksomhet Automatisert Respons</span>
@@ -50,6 +62,12 @@ function Wizard() {
 
 
         <div className="steps">
+        {isDialogOpen && (
+                <dialog open>
+                    <h2>Your dialog content</h2>
+                    <button onClick={closeDialog}>Close</button>
+                </dialog>
+            )}
             <div className={styles.stepsContainer}>
                 {Object.keys(stepIcons).map((key) => {
                     const numKey = parseInt(key, 10);
