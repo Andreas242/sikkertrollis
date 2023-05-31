@@ -57,7 +57,7 @@ const Wizard = (props:any) => {
         <div>
             <div className={styles.hero}>
                 <h1>
-                    <span className={styles.title1}>F O R Sikker Virksomhet Automatisert Respons</span>
+                    <span className={styles.title1}>C y b e r S j e k k</span>
                 </h1>
             </div>
             <div className="steps">
@@ -111,10 +111,6 @@ const Wizard = (props:any) => {
                     <button className={styles.button61} role="button" disabled={!isStepCompleted(step)}
                         onClick={handleStepCompletion}>Neste</button>
                 </div>
-                {/**           <div>
-                {completedSteps},{step}, {isStepCompleted(step).toString()}
-            </div>
-*/}
             </div>
             <footer className={styles.footer}>
                 <div className={styles.footerContainer}>
@@ -125,7 +121,6 @@ const Wizard = (props:any) => {
                         <div className={styles.footerLogoContainer}>
                             <a href="http://www.nsm.no"><img src="nsm.png" alt="NSM" width="100px"/></a>
                         </div>
-
 
                         <div className={styles.footerLinks}>
                             <a href="https://nsm.no/getfile.php/136606-1625054194/NSM/Filer/Bildegalleri/Bilder%20til%20grunnprinsipper/Vedlegg-%20Mal%20for%20risikovurdring%20IKT-systemer.xlsx">NSM Risikovurdering av IKT-systemer</a>

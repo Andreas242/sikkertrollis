@@ -42,8 +42,10 @@ const Step1: React.FC<Step1Props> = ({
           <h2>{content.HEADING}</h2>
           <div className={styles.responseContainer}>
             <div className={styles.responseContent}>
+              
               {options.map((option) => (
                 <div key={option.id} className={styles.responseOption}>
+                  <label>
                   <input
                     type="radio"
                     value={option.id}
@@ -51,6 +53,7 @@ const Step1: React.FC<Step1Props> = ({
                     onChange={handleOptionChange}
                   />
                   <span className={styles.stepOptions}>{option.label}</span>
+                  </label>
                 </div>
               ))}
             </div>
