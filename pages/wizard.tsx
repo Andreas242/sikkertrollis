@@ -62,9 +62,16 @@ function Wizard() {
 
 
         <div className="steps">
+            {isDialogOpen && (
+                <div className={styles.backdrop}></div>
+            )}
         {isDialogOpen && (
                 <dialog open>
-                    <h2>Your dialog content</h2>
+                    <h2>Gratulerer</h2>
+                    <p>Du har tatt deg igjennom sikkerhetskollen og har fått: X poeng. 
+                    </p>
+                    <p>Ditt beste område er: </p>
+                    <p>Ditt område med mest forbedringspotensiale er: </p>
                     <button onClick={closeDialog}>Close</button>
                 </dialog>
             )}
