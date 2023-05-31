@@ -169,6 +169,12 @@
   .footerLinks {
     display: flex;
     gap: 24px;
+    font-size: 75%;
+    flex-direction: column;
+
+  }
+  .footerLinks a:hover {
+    text-decoration: underline;
   }
 
 /* CSS */
