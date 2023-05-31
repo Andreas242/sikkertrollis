@@ -41,6 +41,7 @@ function Wizard() {
         if (step === totalSteps) {
             // Open the dialog when it's the last step
             setIsDialogOpen(true);
+            setStep(1);
         } else {
             // Otherwise, proceed to the next step
             setStep(step + 1);
