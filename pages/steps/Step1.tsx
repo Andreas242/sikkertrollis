@@ -37,37 +37,34 @@ const Step1: React.FC<Step1Props> = ({
 
   return (
     <div>
-      {content && 
-    
-    <div key={step}>
-      <h2>{content.HEADING}</h2>
-      <div className={styles.responseContainer}>
-      <div className={styles.responseContent}>
-        {options.map((option) => (
-          <div key={option.id} className={styles.responseOption}>
-            <input
-              type="radio"
-              value={option.id}
-              checked={selectedOption === option.id.toString()}
-              onChange={handleOptionChange}
-            />
-            <span className={styles.stepOptions}>{option.label}</span>
+      {content &&
+        <div key={step}>
+          <h2>{content.HEADING}</h2>
+          <div className={styles.responseContainer}>
+            <div className={styles.responseContent}>
+              {options.map((option) => (
+                <div key={option.id} className={styles.responseOption}>
+                  <input
+                    type="radio"
+                    value={option.id}
+                    checked={selectedOption === option.id.toString()}
+                    onChange={handleOptionChange}
+                  />
+                  <span className={styles.stepOptions}>{option.label}</span>
+                </div>
+              ))}
+            </div>
+            {!selectedOption && <div className={styles.emptyrecommendation}></div>}
+            {selectedOption && <div className={styles.recommendation}>
+              <div>her står det hvor bra du ligger an motsvarende siffren under</div>
+              <div>
+                {selectedOption}
+              </div>
+            </div>
+            }
           </div>
-        ))}
-      </div>
-      {!selectedOption && <div className={styles.emptyrecommendation}></div>}
-      {selectedOption && <div className={styles.recommendation}>
-        <div>her står det hvor bra du ligger an motsvarende siffren under</div>
-        
-        <div>
-        {selectedOption}
         </div>
-      </div>
-}
-      </div>
-        
-    </div>
-}
+      }
     </div>
   );
 };
