@@ -24,8 +24,8 @@ const Step1: React.FC<Step1Props> = ({
   step,
 }) => {
   const [selectedOption, setSelectedOption] = useState("");
-  const options = useMemo(() => content.RESPONSES.map((element) => element), [
-    content.RESPONSES,
+  const options = useMemo(() => content?.RESPONSES.map((element) => element), [
+    content?.RESPONSES,
   ]);
 
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,7 +40,7 @@ const Step1: React.FC<Step1Props> = ({
       <h2>{content.HEADING}</h2>
       <div className={styles.responseContainer}>
       <div className={styles.responseContent}>
-        {options.map((option) => (
+        {options?.map((option) => (
           <div key={option.id} className={styles.responseOption}>
             <input
               type="radio"
