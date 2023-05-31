@@ -9,7 +9,7 @@ import STEPMOCK from "@/MOCKDATA/STEPMOCK";
 
 function Wizard() {
     const [step, setStep] = useState(1);
-    const [completedSteps, setCompletedSteps] = useState([]);
+    const [completedSteps, setCompletedSteps] = useState<number[]>([]);
     const [oldStates, setOldStates] = useState([0, 0, 0, 0]); // set this to remeber what the user has chosen on every step
     const stepIcons: Record<number, ReactElement> = {
         1: <FaUserSecret size={32} />,

@@ -8,13 +8,13 @@ interface Option {
 }
 
 interface Step1Props {
-  setCompletedSteps: React.Dispatch<React.SetStateAction<string[]>>;
-  completedSteps: string[];
+  setCompletedSteps: React.Dispatch<React.SetStateAction<number[]>>;
+  completedSteps: number[];
   content: {
     HEADING: string;
     RESPONSES: Option[];
   };
-  step: number
+  step: number;
 }
 
 const Step1: React.FC<Step1Props> = ({
@@ -28,9 +28,7 @@ const Step1: React.FC<Step1Props> = ({
     content.RESPONSES,
   ]);
 
-  const handleOptionChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedOption(event.target.value);
     if (!completedSteps.includes(step)) {
       setCompletedSteps((oldArray) => [...oldArray, step]);
