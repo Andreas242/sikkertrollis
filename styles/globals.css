@@ -108,15 +108,19 @@ a {
 }
 dialog {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 90%;
-  min-width: 40%;
-  z-index: 9999;
-  padding: 20px;
-  background-color: #e27814;
-  border-radius: 8px;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    min-height: 300px;
+    min-width: 40%;
+    z-index: 9999;
+    padding: 20px;
+    background-color: #e27814;
+    border-radius: 8px;
+    justify-content: space-between;
+    flex-direction: column;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 

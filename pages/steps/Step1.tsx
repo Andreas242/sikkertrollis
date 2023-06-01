@@ -59,9 +59,14 @@ const Step1: React.FC<Step1Props> = ({
             </div>
             {!selectedOption && <div className={styles.emptyrecommendation}></div>}
             {selectedOption && <div className={styles.recommendation}>
-              <div>her står det hvor bra du ligger an motsvarende siffren under</div>
+              <h3>Rekommendasjon</h3>
+              {selectedOption === "1" && <div>Ni har en del at jobbe med fremover</div>}
+              {selectedOption === "2"  && <div>Ni har en del at jobbe med fremover</div>}
+              {selectedOption === "3" && <div>Bra at ni startet med tiltak, men det finnes mer at jobbe med</div>}
+              {selectedOption === "4" && <div>Bra at ni startet med tiltak, men det finnes mer at jobbe med</div>}
+              {selectedOption === "5" && <div>Suverent! Ni er vel forberedde for dette trussel</div>}
               <div>
-                {selectedOption}
+                Poeng: {selectedOption}
               </div>
             </div>
             }
