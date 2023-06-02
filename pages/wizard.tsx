@@ -1,6 +1,6 @@
 // components/Wizard.tsx
 import { ReactElement, useState } from "react";
-import Step1 from "./steps/Step1";
+import Step1 from "./steps/Step";
 import FinalStep from "./steps/FinalStep";
 import { FaUserSecret, FaShieldVirus, FaLock, FaCamera } from "react-icons/fa";
 import styles from "../styles/Icons.module.css";
