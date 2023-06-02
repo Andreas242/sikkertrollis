@@ -1,6 +1,6 @@
 // components/Wizard.tsx
 import { ReactElement, useState } from "react";
-import Step1 from "./steps/Step1";
+import Step from "./steps/Step";
 import FinalStep from "./steps/FinalStep";
 import { FaUserSecret, FaShieldVirus, FaLock, FaCamera } from "react-icons/fa";
 import styles from "../styles/Icons.module.css";
@@ -23,7 +23,7 @@ const Wizard = (props: any) => {
     {
       title: `Step ${step}`,
       component: (
-        <Step1
+        <Step
           setCompletedSteps={setCompletedSteps}
           completedSteps={completedSteps}
           content={STEPMOCK[step - 1]}
