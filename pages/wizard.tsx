@@ -132,7 +132,8 @@ const Wizard = (props: any) => {
               disabled={!isStepCompleted(step)}
               onClick={handleStepCompletion}
             >
-              Neste
+                {step === totalSteps  && <span>Avslutt</span>}
+                {step !== totalSteps  && <span>Neste</span>}              
             </button>
           </div>
         </div>
