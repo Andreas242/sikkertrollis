@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo } from "react";
 import { useState } from "react";
 import styles from "../../styles/Icons.module.css";
+import { FaQuestion, FaQuestionCircle } from "react-icons/fa";
 
 interface Option {
   id: number;
@@ -39,7 +40,7 @@ const Step: React.FC<StepProps> = ({
     <div>
       {content &&
         <div key={step}>
-          <h2>{content.HEADING}</h2>
+          <h2>{content.HEADING}</h2>          
           <div className={styles.responseContainer}>
             <div className={styles.responseContent}>
               
@@ -59,11 +60,11 @@ const Step: React.FC<StepProps> = ({
             </div>
             {!selectedOption && <div className={styles.emptyrecommendation}></div>}
             {selectedOption && <div className={styles.recommendation}>
-              <h3>Rekommendasjon</h3>
-              {selectedOption === "1" && <div>Ni har en del at jobbe med fremover</div>}
-              {selectedOption === "2"  && <div>Ni har en del at jobbe med fremover</div>}
-              {selectedOption === "3" && <div>Bra at ni startet med tiltak, men det finnes mer at jobbe med</div>}
-              {selectedOption >= "4" && <div>Suverent! Ni er vel forberedde for dette trussel</div>}
+              <h3>Anbefaling</h3>
+              {selectedOption === "1" && <div>Dere har en del å jobbe med fremover</div>}
+              {selectedOption === "2"  && <div>Dere har en del å jobbe med fremover</div>}
+              {selectedOption === "3" && <div>Bra at dere har startet med tiltak, men det er mer å jobbe med</div>}
+              {selectedOption >= "4" && <div>Suverent! Dere er godt forberedt på denne trusselen</div>}
               {selectedOption === "5" && <div></div>}
               <div>
                 Poeng: {selectedOption}

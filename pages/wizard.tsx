@@ -60,7 +60,7 @@ const Wizard = (props: any) => {
     <div>
       <div className={styles.hero}>
         <h1>
-          <span className={styles.title1}>C y b e r S j e k k</span>
+          <span className={styles.title1}>C y b e r s j e k k</span>
         </h1>
       </div>
       <div className="steps">
@@ -69,18 +69,18 @@ const Wizard = (props: any) => {
           <dialog open>
             <h2>Gratulerer</h2>
             <p>
-              Du har tatt deg igjennom sikkerhetskollen og har fått: 10 poeng.
+            Du har kommet gjennom sikkerhetskontrollen og har fått: 10 poeng.
             </p>
             <p>
               Ditt beste område er:{" "}
               <span className={styles.areasofinterest}>Sikker konfigurasjon av nettverk</span>
             </p>
             <p>
-              Ditt område med mest forbedringspotensiale er:{" "}
+            Ditt område med størst potensial for forbedring er:{" "}
               <span className={styles.areasofinterest}>Sikker konfigurasjon av servere og klienter</span>
             </p>
             <p>
-              Du kan lese mer om hur du kan forberede din bedrift 
+            Du kan lese mer om hvordan du kan forberede virksomheten din 
               <a href="https://nsm.no"> -her-</a>
             </p>
             <button className={styles.button62} onClick={closeDialog}>
@@ -140,7 +140,7 @@ const Wizard = (props: any) => {
       <footer className={styles.footer}>
         <div className={styles.footerContainer}>
           <p className={styles.footerLeadText}>
-            Denne siden er laget for å hjelpe norske bedrifter med å være
+            Denne siden er laget for å hjelpe norske virksomheter med å være
             oppmerksomme på trusler og hvordan man best kan tilpasse sin
             sikkerhetsstrategi for å motvirke dem.
           </p>
