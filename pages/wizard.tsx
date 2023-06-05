@@ -13,10 +13,10 @@ const Wizard = (props: any) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
   const stepIcons: Record<number, { icon: ReactElement; title: string }> = {
-    1: { icon: <FaUserSecret size={32} />, title: "Kvantedatamaskiner" },
-    2: { icon: <FaShieldVirus size={32} />, title: "Phising" },
-    3: { icon: <FaLock size={32} />, title: "Dataskydd" },
-    4: { icon: <FaCamera size={32} />, title: "IOT" },
+    1: { icon: <FaUserSecret size={32} />, title: "Oversikt" },
+    2: { icon: <FaShieldVirus size={32} />, title: "Sikker konfigurasjon av nettverk" },
+    3: { icon: <FaLock size={32} />, title: "Sikker konfigurasjon av servere og klienter" },
+    4: { icon: <FaCamera size={32} />, title: "Hendelsesberedskap" },
   };
 
   const steps = [
@@ -73,16 +73,15 @@ const Wizard = (props: any) => {
             </p>
             <p>
               Ditt beste område er:{" "}
-              <span className={styles.areasofinterest}>IOT</span>
+              <span className={styles.areasofinterest}>Sikker konfigurasjon av nettverk</span>
             </p>
             <p>
               Ditt område med mest forbedringspotensiale er:{" "}
-              <span className={styles.areasofinterest}>Kvantedatamaskiner</span>
+              <span className={styles.areasofinterest}>Sikker konfigurasjon av servere og klienter</span>
             </p>
             <p>
-              Du kan lese mer om hur du kan forberede din bedrift for
-              kvanteapokalypsen{" "}
-              <a href="https://imdb.com/title/tt1265621/"> -her-</a>
+              Du kan lese mer om hur du kan forberede din bedrift 
+              <a href="https://nsm.no"> -her-</a>
             </p>
             <button className={styles.button62} onClick={closeDialog}>
               Lukk

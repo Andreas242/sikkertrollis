@@ -63,8 +63,8 @@ const Step: React.FC<StepProps> = ({
               {selectedOption === "1" && <div>Ni har en del at jobbe med fremover</div>}
               {selectedOption === "2"  && <div>Ni har en del at jobbe med fremover</div>}
               {selectedOption === "3" && <div>Bra at ni startet med tiltak, men det finnes mer at jobbe med</div>}
-              {selectedOption === "4" && <div>Bra at ni startet med tiltak, men det finnes mer at jobbe med</div>}
-              {selectedOption === "5" && <div>Suverent! Ni er vel forberedde for dette trussel</div>}
+              {selectedOption >= "4" && <div>Suverent! Ni er vel forberedde for dette trussel</div>}
+              {selectedOption === "5" && <div></div>}
               <div>
                 Poeng: {selectedOption}
               </div>

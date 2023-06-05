@@ -1,39 +1,35 @@
 const STEPMOCK = [{
-    HEADING: 'Hva har dere gjort for å dempe virkningen av at kvantecomputere når RSA-bruddnivåer av beregningskraft?',
-    RESPONSES: [{ id: 1, label: 'Hva er en kvantecomputer?', lvl: 1, feedback: 'Ikke bra' },
-    { id: 2, label: 'Vi er klar over risikene, men har ingen aktuell agenda for å håndtere det.', lvl: 1, feedback: '' },
-    { id: 3, label: 'Vi har en plan om å se på det i løpet av de neste to årene.', lvl: 2, feedback: '' },
-    { id: 4, label: 'Vi er for øyeblikket i samtaler om å endre våre krypteringsalgoritmer i henhold til NIST-veiledninger.', lvl: 2, feedback: '' },
-    { id: 5, label: 'Vi har implementert nye krypteringsalgoritmer i henhold til NIST-veiledninger.', lvl: 3, feedback: '' }]
-
+    HEADING: 'Har virksomheten laget en oversikt over sine servere?',
+    RESPONSES: [{ id: 1, label: 'Vi har ingen slik oversikt', lvl: 1, feedback: 'Ikke bra' },
+    { id: 2, label: 'Vi har en oversikt, men den er ikke komplett', lvl: 1, feedback: '' },
+    { id: 3, label: 'Vi har en oversikt, men den er ikke oppdatert', lvl: 2, feedback: '' },
+    { id: 4, label: 'Vi har en komplett og oppdatert oversikt over alle serverne våre', lvl: 2, feedback: '' }]
 },
 {
-    HEADING: 'Hva har selskapet gjort for å beskytte mot phishing-angrep?',
-    RESPONSES: [{ id: 1, label: 'Vi er ikke klar over phishing-angrep.', lvl: 1, feedback: 'Ikke bra' },
-    { id: 2, label: 'Vi sender regelmessige e-poster til ansatte om å være oppmerksomme på phishing-angrep.', lvl: 2, feedback: '' },
-    { id: 3, label: 'Vi har implementert teknologi for å oppdage phishing-angrep i sanntid.', lvl: 2, feedback: '' },
-    { id: 4, label: 'Ansatte gjennomgår regelmessig opplæring om phishing-angrep.', lvl: 2, feedback: '' },
-    { id: 5, label: 'Vi har en kombinasjon av flere av ovennevnte tiltak.', lvl: 3, feedback: '' }]
-
+    HEADING: 'Beskytter virksomheten nettverket sitt med en brannmur?',
+    RESPONSES: [{ id: 1, label: 'Vårt nettverk står ikke bak en brannmur', lvl: 1, feedback: 'Ikke bra' },
+    { id: 2, label: 'Vi har en brannmur, men vi har aldri konfigurert den', lvl: 2, feedback: '' },
+    { id: 3, label: 'Vi har en brannmur, men noen klienter eller servere er konfigurert til å ikke bruke den', lvl: 2, feedback: '' },
+    { id: 4, label: 'Vi har aktivert brannmurfunksjonalitet i alle nettverkskomponenter, servere og klienter hvor det er mulig', lvl: 2, feedback: '' }]
+ 
 },
 {
-    HEADING: 'Hva har selskapet gjort for å beskytte sensitive data?',
+    HEADING: 'Hvor ofte installerer virksomheten sikkerhetsoppdateringer på kritiske servere?',
     RESPONSES: [
-    { id: 1, label: 'Vi har ikke implementert noen sikkerhetstiltak for å beskytte sensitive data.', lvl: 1, feedback: 'Ikke bra' },
-    { id: 2, label: 'Vi krypter data ved hjelp av standard krypteringsalgoritmer.', lvl: 2, feedback: 'Gjør bedre' },
-    { id: 3, label: 'Vi har implementert tilleggsbeskyttelse ved å kreve tofaktorautentisering for å få tilgang til sensitive data.', lvl: 2, feedback: 'Gjør bedre' },
-    { id: 4, label: 'Sensitive data lagres på en sikker skytjeneste.', lvl: 2, feedback: 'Ganska bra' },
-    { id: 5, label: 'Vi har en kombinasjon av flere av ovennevnte tiltak.', lvl: 3, feedback: 'Vädligt bra' },
+    { id: 1, label: 'Vi oppdaterer aldri våre servere', lvl: 1, feedback: 'Ikke bra' },
+    { id: 2, label: 'Vi installerer sikkerhetsoppdateringer når vi leser om kritiske oppdateringer i nyhetene', lvl: 2, feedback: 'Gjør bedre' },
+    { id: 3, label: 'Vi installerer sikkerhetsoppdateringer på faste tidspunkt, men ikke nødvendigvis rett etter at de er tilgjengelige', lvl: 2, feedback: 'Gjør bedre' },
+    { id: 4, label: 'Vi installerer sikkerhetsoppdateringer når vi får varsel fra leverandør', lvl: 2, feedback: 'Ganska bra' },
+    { id: 5, label: 'Vi installerer sikkerhetsrutiner i henhold til etablert rutine eller automatisk prosess', lvl: 3, feedback: 'Vädligt bra' },
 ]
 
 },
 {
-    HEADING: 'Hva har selskapet gjort for å beskytte mot trusler fra internett of ting?',
-    RESPONSES: [{ id: 1, label: 'Vi er ikke klar over trusler fra IoT.', lvl: 1, feedback: 'Ikke bra' },
-    { id: 2, label: 'Vi overvåker regelmessig for sårbare enheter på nettverket.', lvl: 2, feedback: '' },
-    { id: 3, label: 'Vi har implementert teknologi for å oppdage trusler fra IoT i sanntid.', lvl: 2, feedback: '' },
-    { id: 4, label: 'Vi oppdaterer regelmessig sårbare enheter for å sikre deres sikkerhet.', lvl: 2, feedback: '' },
-    { id: 5, label: 'Vi har en kombinasjon av flere av ovennevnte tiltak.', lvl: 3, feedback: '' }]
+    HEADING: 'Har virksomheten etablert et planverk for hendelseshåndtering?',
+    RESPONSES: [{ id: 1, label: 'Vi har ingen planer for hvordan vi skal håndtere et dataangrep', lvl: 1, feedback: 'Ikke bra' },
+    { id: 2, label: 'Vi har noen planer, men de dekker ikke alle våre systemer', lvl: 2, feedback: '' },
+    { id: 3, label: 'Vi har planer, men vi øver ikke rutinemessig på dem', lvl: 2, feedback: '' },
+    { id: 4, label: 'Vi har planer som vi rutinemessig øver på', lvl: 2, feedback: '' }]
 
 },
 
