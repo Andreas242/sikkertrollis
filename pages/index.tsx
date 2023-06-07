@@ -1,7 +1,6 @@
 
-import styles from '@/styles/Home.module.css'
 import Wizard from './wizard'
-import { Dispatch, useState } from 'react'
+import { Dispatch } from 'react'
 import Head from 'next/head'
 import { useReducer, createContext } from 'react'
 
@@ -20,8 +19,8 @@ export const WizardContext = createContext<{
   state: WizardState;
   dispatch: Dispatch<WizardAction>;
 }>({
-  state: initialState, // Default state
-  dispatch: () => null // Default dispatch function
+  state: initialState, 
+  dispatch: () => null
 });
 
 const wizardReducer = (state: any, action: { type: any; step: any; response: any }) => {
