@@ -9,6 +9,7 @@ interface Option {
 }
 
 interface StepProps {
+  // setCompletedSteps is not implemented - needs to show different icons - use context instead
   setCompletedSteps: React.Dispatch<React.SetStateAction<number[]>>;
   completedSteps: number[];
   content: {
