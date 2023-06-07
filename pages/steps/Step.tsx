@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useContext } from "react";
 import { useState } from "react";
 import styles from "../../styles/Icons.module.css";
-import { FaQuestion, FaQuestionCircle } from "react-icons/fa";
+import { WizardContext } from "../index";
 
 interface Option {
   id: number;
@@ -29,11 +29,10 @@ const Step: React.FC<StepProps> = ({
     content?.RESPONSES,
   ]);
 
-  const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedOption(event.target.value);
-    if (!completedSteps.includes(step)) {
-      setCompletedSteps((oldArray) => [...oldArray, step]);
-    }
+  const { state, dispatch } = useContext(WizardContext);
+
+  const handleOptionChange = (event: { target: { value: any; }; }) => {
+    dispatch({ type: 'UPDATE_STEP', step, response: event.target.value });
   };
 
   return (
@@ -50,7 +49,7 @@ const Step: React.FC<StepProps> = ({
                   <input
                     type="radio"
                     value={option.id}
-                    checked={selectedOption === option.id.toString()}
+                    checked={state[step] === option.id.toString()}
                     onChange={handleOptionChange}
                   />
                   <span className={styles.stepOptions}>{option.label}</span>
