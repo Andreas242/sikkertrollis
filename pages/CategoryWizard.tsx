@@ -1,12 +1,12 @@
 // components/Wizard.tsx
 import { ReactElement, useState, useContext, useCallback } from "react";
-import Step from "./steps/Category";
-import FinalStep from "./steps/FinalStep";
+import Category from "./categories/Category";
+import FinalStep from "./categories/FinalStep";
 import { FaUserSecret, FaShieldVirus, FaLock, FaCamera } from "react-icons/fa";
 import styles from "../styles/Icons.module.css";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import STEPMOCK from "@/MOCKDATA/STEPMOCK";
-import { WizardContext } from "./index";
+import { CategoryContext } from "./index";
 import { Dialog } from "@/components/Dialog";
 import { Footer } from "@/components/Footer";
 import { Categoryicons } from "@/components/Categoryicons";
@@ -19,17 +19,17 @@ const stepIcons: Record<number, { icon: ReactElement; title: string }> = {
     4: { icon: <FaCamera size={32} />, title: "Hendelsesberedskap" },
 };
 
-const Wizard = () => {
+const CategoryWizard = () => {
     const totalSteps = STEPMOCK.length;
     const [step, setStep] = useState(1);
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [completedSteps, setCompletedSteps] = useState<number[]>([]);
-    const { state } = useContext(WizardContext);
+    const { state } = useContext(CategoryContext);
     const steps = [
         {
             title: `Step ${step}`,
             component: (
-                <Step
+                <Category
                     setCompletedSteps={setCompletedSteps}
                     completedSteps={completedSteps}
                     content={STEPMOCK[step - 1]}
@@ -103,4 +103,4 @@ const Wizard = () => {
     );
 };
 
-export default Wizard;
+export default CategoryWizard;

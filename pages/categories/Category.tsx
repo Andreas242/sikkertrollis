@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, ChangeEvent } from "react";
 import styles from "../../styles/Icons.module.css";
-import { WizardContext } from "../index";
+import { CategoryContext } from "../index";
 import { Anbefaling } from "@/components/Anbefaling";
 
 interface Option {
@@ -8,7 +8,7 @@ interface Option {
   label: string;
 }
 
-interface StepProps {
+interface CategoryProps {
   // setCompletedSteps is not implemented - needs to show different icons - use context instead
   setCompletedSteps: React.Dispatch<React.SetStateAction<number[]>>;
   completedSteps: number[];
@@ -19,11 +19,11 @@ interface StepProps {
   step: number;
 }
 
-const Step: React.FC<StepProps> = ({
+const Category: React.FC<CategoryProps> = ({
   content,
   step,
 }) => {
-  const { state, dispatch } = useContext(WizardContext);
+  const { state, dispatch } = useContext(CategoryContext);
 
   const handleOptionChange = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch({ type: 'UPDATE_STEP', step, response: event.target.value });
@@ -59,4 +59,4 @@ const Step: React.FC<StepProps> = ({
   );
 };
 
-export default Step;
+export default Category;

@@ -1,23 +1,22 @@
-
-import Wizard from './wizard'
+import CategoryWizard from './CategoryWizard'
 import { Dispatch } from 'react'
 import Head from 'next/head'
 import { useReducer, createContext } from 'react'
 
-interface WizardState {
+interface CategoryState {
   [step: string]: string; 
 }
-type WizardAction = {
+type CategoryAction = {
   type: string;
   step: number;
   response: string;
 }
 
-const initialState: WizardState = {};
+const initialState: CategoryState = {};
 
-export const WizardContext = createContext<{
-  state: WizardState;
-  dispatch: Dispatch<WizardAction>;
+export const CategoryContext = createContext<{
+  state: CategoryState;
+  dispatch: Dispatch<CategoryAction>;
 }>({
   state: initialState, 
   dispatch: () => null
@@ -40,9 +39,9 @@ export default function Home() {
       <title>CyberSjekk</title>
     </Head>
       <div className={'wrapper'}>
-        <WizardContext.Provider value={{ state, dispatch }}>
-        <Wizard/>
-        </WizardContext.Provider>
+        <CategoryContext.Provider value={{ state, dispatch }}>
+        <CategoryWizard/>
+        </CategoryContext.Provider>
       </div>
     </>
   )
