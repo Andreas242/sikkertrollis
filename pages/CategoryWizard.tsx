@@ -1,7 +1,7 @@
 // components/Wizard.tsx
 import { ReactElement, useState, useContext, useCallback } from "react";
-import Category from "./categories/Category";
-import FinalStep from "./categories/FinalStep";
+import Category from "./Category";
+import FinalStep from "./FinalStep";
 import { FaUserSecret, FaShieldVirus, FaLock, FaCamera } from "react-icons/fa";
 import styles from "../styles/Icons.module.css";
 import { TransitionGroup, CSSTransition } from "react-transition-group";

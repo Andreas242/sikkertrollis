@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, ChangeEvent } from "react";
-import styles from "../../styles/Icons.module.css";
-import { CategoryContext } from "../index";
+import styles from "../styles/Icons.module.css";
+import { CategoryContext } from "./index";
 import { Anbefaling } from "@/components/Anbefaling";
 
 interface Option {
