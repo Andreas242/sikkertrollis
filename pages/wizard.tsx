@@ -1,11 +1,12 @@
 // components/Wizard.tsx
-import { ReactElement, useState } from "react";
+import { ReactElement, useState, useContext } from "react";
 import Step from "./steps/Step";
 import FinalStep from "./steps/FinalStep";
 import { FaUserSecret, FaShieldVirus, FaLock, FaCamera } from "react-icons/fa";
 import styles from "../styles/Icons.module.css";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import STEPMOCK from "@/MOCKDATA/STEPMOCK";
+import { WizardContext } from "./index";
 
 const Wizard = (props: any) => {
   const totalSteps = STEPMOCK.length;
@@ -18,7 +19,7 @@ const Wizard = (props: any) => {
     3: { icon: <FaLock size={32} />, title: "Sikker konfigurasjon av servere og klienter" },
     4: { icon: <FaCamera size={32} />, title: "Hendelsesberedskap" },
   };
-
+  const { state } = useContext(WizardContext);
   const steps = [
     {
       title: `Step ${step}`,
@@ -41,14 +42,10 @@ const Wizard = (props: any) => {
 
   const handleStepCompletion = () => {
     if (step === totalSteps) {
-      // Open the dialog when it's the last step
       setIsDialogOpen(true);
       setStep(1);
     } else {
-      //      const currentScore = props.score;
-      //     props.setScore(currentScore + STEPMOCK[step-1].)
-      // Otherwise, proceed to the next step
-      setStep(step + 1);
+       setStep(step + 1);
     }
   };
 
@@ -128,7 +125,7 @@ const Wizard = (props: any) => {
             <button
               className={styles.button61}
               role="button"
-              disabled={!isStepCompleted(step)}
+              disabled={!state[step]}
               onClick={handleStepCompletion}
             >
                 {step === totalSteps  && <span>Avslutt</span>}
