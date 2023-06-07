@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Head from 'next/head'
 import { useReducer, createContext } from 'react'
 
-export const WizardContext = createContext(null) as React.Context<WizardState>;
+export const WizardContext = createContext(null) as React.Context<any>;
 
 const wizardReducer = (state: any, action: { type: any; step: any; response: any }) => {
   switch (action.type) {
