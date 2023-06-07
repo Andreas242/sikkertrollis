@@ -1,11 +1,29 @@
 
 import styles from '@/styles/Home.module.css'
 import Wizard from './wizard'
-import { useState } from 'react'
+import { Dispatch, useState } from 'react'
 import Head from 'next/head'
 import { useReducer, createContext } from 'react'
 
-export const WizardContext = createContext({}) as React.Context<any>;
+interface WizardState {
+  [step: string]: string; 
+}
+
+type WizardAction = {
+  type: string;
+  step: string;
+  response: string;
+}
+
+const initialState: WizardState = {};
+
+export const WizardContext = createContext<{
+  state: WizardState;
+  dispatch: Dispatch<WizardAction>;
+}>({
+  state: initialState, // Default state
+  dispatch: () => null // Default dispatch function
+});
 
 const wizardReducer = (state: any, action: { type: any; step: any; response: any }) => {
   switch (action.type) {
