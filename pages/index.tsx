@@ -6,9 +6,8 @@ import Head from 'next/head'
 import { useReducer, createContext } from 'react'
 
 interface WizardState {
-  [step: number]: number; 
+  [step: string]: string; 
 }
-
 type WizardAction = {
   type: string;
   step: number;
