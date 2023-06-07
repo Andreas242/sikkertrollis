@@ -37,9 +37,7 @@ const Wizard = (props: any) => {
       component: <FinalStep />,
     },
   ];
-  const isStepCompleted = (stepNumber: any) =>
-    completedSteps.includes(stepNumber);
-
+  
   const handleStepCompletion = () => {
     if (step === totalSteps) {
       setIsDialogOpen(true);

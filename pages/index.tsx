@@ -17,9 +17,7 @@ const wizardReducer = (state: any, action: { type: any; step: any; response: any
 };
 
 export default function Home() {
-
   const [state, dispatch] = useReducer(wizardReducer, {});
-  const [score, setScore] = useState(0);
   return (
     <>
     <Head>
