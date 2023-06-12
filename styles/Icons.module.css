@@ -232,18 +232,18 @@
 }
 
 .button61:not(:disabled) {
-  background-color: rgb(247, 141, 14);;
+  background-color: rgb(247, 141, 14);
 }
 
 .button61:focus {
   box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
   border: 1px solid black;
-  background-color: #fcac6b;
+  background-color: rgb(248, 157, 46);
 }
 
 .button61:active {
   box-shadow: rgba(0, 0, 0, .2) 0 5px 5px -3px, rgba(0, 0, 0, .14) 0 8px 10px 1px, rgba(0, 0, 0, .12) 0 3px 14px 2px;
-  background: #ffb477;
+  background: rgb(249, 152, 33);
 }
 
 .recommendation {
@@ -391,4 +391,93 @@
 .button62:active {
   box-shadow: rgba(0, 0, 0, .2) 0 5px 5px -3px, rgba(0, 0, 0, .14) 0 8px 10px 1px, rgba(0, 0, 0, .12) 0 3px 14px 2px;
   background: #ffffff;
+}
+
+.fade-enter {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.9);
+  z-index: 2;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+  z-index: 2;
+}
+
+.fade-exit {
+  opacity: 1;
+  z-index: 0;
+  
+}
+
+.fade-exit-active {
+  opacity: 0;
+  z-index: 0;
+  transform: scale(0.9);
+  transition: opacity 100ms, transform 100ms;
+}
+
+.button63 {
+  align-items: center;
+  appearance: none;
+  border-radius: 4px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 1px -2px,rgba(0, 0, 0, .14) 0 2px 2px 0,rgba(0, 0, 0, .12) 0 1px 5px 0;
+  box-sizing: border-box;
+  color: #1b1b1b;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: Roboto,sans-serif;
+  font-size: .875rem;
+  font-weight: 600;
+  height: 64px;
+  justify-content: center;
+  letter-spacing: .0892857em;
+  line-height: normal;
+  min-width: 148px;
+  outline: none;
+  overflow: visible;
+  padding: 0 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  will-change: transform,opacity;
+  margin-right: 1rem;
+}
+
+.button63:hover {
+  box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.button63:disabled {
+  background-color: rgba(0, 0, 0, .12);
+  box-shadow: rgba(0, 0, 0, .2) 0 0 0 0, rgba(0, 0, 0, .14) 0 0 0 0, rgba(0, 0, 0, .12) 0 0 0 0;
+  color: rgba(0, 0, 0, .37);
+  cursor: default;
+  pointer-events: none;
+}
+
+.button63:not(:disabled) {
+  background-color: rgb(255, 255, 255);;
+}
+
+.button63:focus {
+  box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
+  border: 1px solid black;
+  background-color: #b8b8b8;
+}
+
+.button63:active {
+  box-shadow: rgba(0, 0, 0, .2) 0 5px 5px -3px, rgba(0, 0, 0, .14) 0 8px 10px 1px, rgba(0, 0, 0, .12) 0 3px 14px 2px;
+  background: #b8b8b8;
 }

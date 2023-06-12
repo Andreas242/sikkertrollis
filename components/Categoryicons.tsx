@@ -14,7 +14,14 @@ export const Categoryicons = (props : any) => (
         isActive ? styles.active : ""
       } ${isCompleted ? styles.completed : ""}`}
       onClick={() => props.setStep(numKey)}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') { // ' ' is the Space key
+          props.setStep(numKey);
+          event.preventDefault(); // prevent the page from scrolling when Space is pressed
+        }}}
       title={props.stepIcons[numKey].title} // Add the title attribute here
+      tabIndex={0}
+      role="button"
     >
       {props.stepIcons[numKey].icon}
     </div>

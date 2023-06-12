@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, ChangeEvent } from "react";
 import styles from "../styles/Icons.module.css";
-import { CategoryContext } from "./index";
+import { CategoryContext } from "../pages/index";
 import { Anbefaling } from "@/components/Anbefaling";
 
 interface Option {
@@ -8,25 +8,28 @@ interface Option {
   label: string;
 }
 
-interface CategoryProps {
-  // setCompletedSteps is not implemented - needs to show different icons - use context instead
-  setCompletedSteps: React.Dispatch<React.SetStateAction<number[]>>;
-  completedSteps: number[];
+interface QuestionProps {
   content: {
     HEADING: string;
     RESPONSES: Option[];
+    id: number;
   };
   step: number;
+  handleNextQuestion: any;
 }
 
-const Category: React.FC<CategoryProps> = ({
+const Question: React.FC<QuestionProps> = ({
   content,
   step,
+  handleNextQuestion,
 }) => {
   const { state, dispatch } = useContext(CategoryContext);
 
   const handleOptionChange = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch({ type: 'UPDATE_STEP', step, response: event.target.value });
+    if (event.key === "Enter" || event.key === " ") {
+      handleNextQuestion(); // call the function on Enter or Space key press
+    }
+    dispatch({ type: 'UPDATE_STEP', step, question: content.id, response: event.target.value });
   };
 
   return (
@@ -41,22 +44,23 @@ const Category: React.FC<CategoryProps> = ({
                 <input
                   type="radio"
                   value={option.id}
-                  checked={state[step] === option.id.toString()}
+                  checked={state[step]?.[content.id] === option.id.toString()}
                   onChange={handleOptionChange}
+                  onKeyDown={handleOptionChange} 
                 />
                 <span className={styles.stepOptions}>{option.label}</span>
               </label>
             </div>
           ))}
         </div>
-        {state[step] ?
-          <Anbefaling selectedOption={state[step]} />
-          :
-          <div className={styles.emptyrecommendation}></div>
-        }
+        {state[step]?.[content.id] ?
+  <Anbefaling selectedOption={state[step]?.[content.id]} />
+  :
+  <div className={styles.emptyrecommendation}></div>
+}
       </div>
     </div>
   );
 };
 
-export default Category;
+export default Question;
